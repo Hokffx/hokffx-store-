@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Hokffx Store</title>
 
 <!-- PREMIUM FONT -->
@@ -11,10 +10,11 @@
 
 <style>
 
+/* BODY */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: radial-gradient(circle at top, #3a0070, #0a001a 70%);
+    background: radial-gradient(circle at top, #4c00ff, #0a001a 70%);
     color: white;
     overflow-x: hidden;
 }
@@ -29,34 +29,32 @@ body::before {
     filter: blur(220px);
     top: -150px;
     left: -150px;
-    opacity: 0.4;
+    opacity: 0.5;
     z-index: -1;
 }
 
 /* HEADER */
 .header {
     text-align: center;
-    padding: 40px 20px;
+    padding: 40px 20px 20px;
 }
 
+/* SMALL TEXT */
 .header p {
-    color: #d48bff;
+    color: #c084fc;
     letter-spacing: 4px;
     font-size: 12px;
 }
 
 /* PREMIUM STORE NAME */
 .header h1 {
-    font-size: 40px;
+    font-size: 42px;
     font-weight: 800;
-
-    background: linear-gradient(90deg, #ffffff, #ff00cc, #7b2ff7);
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #ffffff, #d946ef, #7b00ff);
     -webkit-background-clip: text;
     color: transparent;
-
-    text-shadow:
-        0 0 20px rgba(255,0,200,0.6),
-        0 0 40px rgba(123,47,247,0.6);
+    text-shadow: 0 0 30px rgba(217, 70, 239, 0.6);
 }
 
 /* CONTAINER */
@@ -74,42 +72,33 @@ body::before {
     background: rgba(255,255,255,0.05);
     border-radius: 25px;
     overflow: hidden;
-    backdrop-filter: blur(25px);
-
-    border: 1px solid rgba(255,255,255,0.12);
-
-    box-shadow:
-        0 0 30px rgba(162,0,255,0.3),
-        inset 0 0 20px rgba(255,255,255,0.05);
-
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(162, 0, 255, 0.3);
     transition: 0.4s;
 }
 
 .card:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow:
-        0 0 60px rgba(255,0,255,0.8),
-        inset 0 0 20px rgba(255,255,255,0.1);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 60px rgba(255, 0, 255, 0.7);
 }
 
 /* IMAGE */
 .card img {
     width: 100%;
+    display: block;
 }
 
 /* CONTENT */
 .content {
-    padding: 20px;
+    padding: 25px;
 }
 
 /* TITLE */
 .title {
     font-size: 24px;
     font-weight: 600;
-
-    background: linear-gradient(90deg, #fff, #c084fc);
-    -webkit-background-clip: text;
-    color: transparent;
+    margin-bottom: 10px;
 }
 
 /* PRICE */
@@ -129,7 +118,7 @@ body::before {
 
 /* ACCESS */
 .access {
-    margin-top: 5px;
+    margin-top: 6px;
     font-size: 12px;
     letter-spacing: 2px;
     color: #bbb;
@@ -137,77 +126,67 @@ body::before {
 
 /* INPUT */
 .input {
-    margin-top: 15px;
+    margin-top: 18px;
+    margin-bottom: 12px;
     width: 100%;
     padding: 14px;
     border-radius: 30px;
     border: none;
     outline: none;
     text-align: center;
-
     background: rgba(255,255,255,0.08);
     color: white;
-
-    backdrop-filter: blur(10px);
+    font-size: 14px;
 }
 
 .input:focus {
-    box-shadow: 0 0 20px #c084fc;
+    box-shadow: 0 0 15px #c084fc;
 }
 
 /* PREMIUM BUTTON */
 .btn {
-    position: relative;
-    margin-top: 15px;
+    display: block;
     width: 100%;
-    padding: 15px;
+    padding: 16px;
     border-radius: 40px;
-
-    background: linear-gradient(135deg, #ff00cc, #7b2ff7);
+    background: linear-gradient(135deg, #ff00cc, #7b00ff);
     color: white;
-    font-weight: 600;
+    text-decoration: none;
+    font-weight: 700;
     text-align: center;
-
-    border: none;
+    letter-spacing: 1.5px;
+    position: relative;
     overflow: hidden;
-
-    box-shadow:
-        0 0 20px rgba(255,0,200,0.7),
-        0 0 40px rgba(123,47,247,0.6);
-
-    transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(255, 0, 255, 0.5);
+    transition: 0.3s ease;
 }
 
-/* GLOW LAYER */
+/* SHINE EFFECT */
 .btn::before {
     content: "";
     position: absolute;
-    inset: -2px;
-    border-radius: 40px;
-    background: linear-gradient(135deg, #ff00cc, #7b2ff7);
-    filter: blur(12px);
-    opacity: 0.7;
-    z-index: -1;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+    transition: 0.5s;
 }
 
-/* HOVER */
+.btn:hover::before {
+    left: 100%;
+}
+
 .btn:hover {
-    transform: scale(1.05);
-    box-shadow:
-        0 0 40px rgba(255,0,200,1),
-        0 0 70px rgba(123,47,247,1);
-}
-
-/* CLICK */
-.btn:active {
-    transform: scale(0.96);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 0 50px rgba(255, 0, 255, 1);
 }
 
 /* NOTE */
 .note {
     font-size: 11px;
     opacity: 0.7;
-    margin-top: 6px;
+    margin-top: 8px;
 }
 
 </style>
