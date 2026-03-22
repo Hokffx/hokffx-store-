@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hokffx Store</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #3a0070, #0a001a 70%);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* GLOW BACKGROUND EFFECT */
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #a200ff;
+    filter: blur(200px);
+    top: -100px;
+    left: -100px;
+    opacity: 0.4;
+    z-index: -1;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.header p {
+    color: #d48bff;
+    letter-spacing: 3px;
+    font-size: 13px;
+}
+
+.header h1 {
+    font-size: 34px;
+    background: linear-gradient(90deg, #fff, #c084fc);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 420px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* CARD */
+.card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 25px;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(162, 0, 255, 0.3);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 60px rgba(255, 0, 255, 0.7);
+}
+
+/* IMAGE */
+.card img {
+    width: 100%;
+    display: block;
+}
+
+/* CONTENT */
+.content {
+    padding: 20px;
+}
+
+.title {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* PRICE */
+.price {
+    font-size: 28px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff00cc, #c084fc);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.old {
+    text-decoration: line-through;
+    color: #aaa;
+    margin-right: 10px;
+}
+
+/* ACCESS TEXT */
+.access {
+    margin-top: 5px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #bbb;
+}
+
+/* INPUT */
+.input {
+    margin-top: 15px;
+    width: 100%;
+    padding: 13px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    text-align: center;
+    background: rgba(255,255,255,0.08);
+    color: white;
+    font-size: 14px;
+}
+
+.input:focus {
+    box-shadow: 0 0 15px #c084fc;
+}
+
+/* BUTTON */
+.btn {
+    margin-top: 15px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #7b00ff, #ff00cc);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.7);
+    transition: 0.4s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(255, 0, 255, 1);
+}
+
+/* NOTE */
+.note {
+    font-size: 11px;
+    opacity: 0.7;
+    margin-top: 6px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <p>👑 PREMIUM GAMING TOOLS 👑</p>
+    <h1>Hokffx Store</h1>
+</div>
+
+<div class="container">
+
+    <!-- iPhone -->
+    <div class="card">
+        <img src="iphone-auxilio.png">
+
+        <div class="content">
+            <div class="title">iPhone Auxilio</div>
+
+            <div>
+                <span class="old">₹1200</span>
+                <span class="price">₹450</span>
+            </div>
+
+            <div class="access">PERMANENT ACCESS</div>
+
+            <input type="email" id="email1" class="input" placeholder="Enter your Gmail">
+
+            <a href="#" class="btn"
+            onclick="order('email1','https://razorpay.me/@enjoymenthub?amount=B3GVR7kTFeLelIPkLbK6rA%3D%3D')">
+            🛒 BUY NOW
+            </a>
+
+            <div class="note">Delivery will be sent to your Gmail</div>
+        </div>
+    </div>
+
+    <!-- Android -->
+    <div class="card">
+        <img src="android-auxilio.png">
+
+        <div class="content">
+            <div class="title">Android Auxilio</div>
+
+            <div>
+                <span class="old">₹799</span>
+                <span class="price">₹349</span>
+            </div>
+
+            <div class="access">PERMANENT ACCESS</div>
+
+            <input type="email" id="email2" class="input" placeholder="Enter your Gmail">
+
+            <a href="#" class="btn"
+            onclick="order('email2','https://razorpay.me/@enjoymenthub?amount=Wgh2WqgWWdyx7%2BiKKkCs3Q%3D%3D')">
+            🛒 BUY NOW
+            </a>
+
+            <div class="note">Delivery will be sent to your Gmail</div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function order(emailId, paymentLink) {
+    let email = document.getElementById(emailId).value;
+
+    if (email === "" || !email.includes("@")) {
+        alert("Enter valid Gmail!");
+        return;
+    }
+
+    let yourEmail = "forenjoymenthub@gmail.com"; // CHANGE THIS
+
+    let subject = "New Order - Hokffx Store";
+    let body = "Customer Gmail: " + email;
+
+    window.location.href =
+    `mailto:${yourEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    setTimeout(() => {
+        window.open(paymentLink, "_blank");
+    }, 800);
+}
+</script> 
+
+</body>
+</html>
