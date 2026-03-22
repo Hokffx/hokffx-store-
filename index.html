@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hokffx Store</title>
 
-<!-- PREMIUM FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<!-- PREMIUM FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -19,7 +19,7 @@ body {
     overflow-x: hidden;
 }
 
-/* GLOW BACKGROUND */
+/* BACKGROUND GLOW */
 body::before {
     content: "";
     position: fixed;
@@ -39,46 +39,22 @@ body::before {
     padding: 40px 20px 20px;
 }
 
+/* SMALL TEXT */
 .header p {
     color: #c084fc;
     letter-spacing: 4px;
     font-size: 12px;
 }
 
-/* 🔥 PREMIUM STORE NAME */
+/* PREMIUM STORE NAME */
 .header h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 46px;
+    font-size: 42px;
     font-weight: 800;
-    letter-spacing: 3px;
-
-    background: linear-gradient(120deg, #ffffff, #e879f9, #9333ea);
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #ffffff, #d946ef, #7b00ff);
     -webkit-background-clip: text;
     color: transparent;
-
-    text-shadow: 
-        0 0 10px rgba(255,255,255,0.4),
-        0 0 20px rgba(168,85,247,0.6),
-        0 0 40px rgba(147,51,234,0.9);
-
-    position: relative;
-}
-
-/* SHINE ANIMATION */
-.header h1::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.8), transparent);
-    animation: shine 3s infinite;
-}
-
-@keyframes shine {
-    0% { left: -100%; }
-    100% { left: 100%; }
+    text-shadow: 0 0 30px rgba(217, 70, 239, 0.6);
 }
 
 /* CONTAINER */
@@ -107,6 +83,7 @@ body::before {
     box-shadow: 0 0 60px rgba(255, 0, 255, 0.7);
 }
 
+/* IMAGE */
 .card img {
     width: 100%;
     display: block;
@@ -121,6 +98,7 @@ body::before {
 .title {
     font-size: 24px;
     font-weight: 600;
+    margin-bottom: 10px;
 }
 
 /* PRICE */
@@ -140,10 +118,10 @@ body::before {
 
 /* ACCESS */
 .access {
+    margin-top: 6px;
     font-size: 12px;
     letter-spacing: 2px;
     color: #bbb;
-    margin-top: 5px;
 }
 
 /* INPUT */
@@ -158,13 +136,14 @@ body::before {
     text-align: center;
     background: rgba(255,255,255,0.08);
     color: white;
+    font-size: 14px;
 }
 
 .input:focus {
     box-shadow: 0 0 15px #c084fc;
 }
 
-/* 🔥 PREMIUM BUTTON */
+/* PREMIUM BUTTON */
 .btn {
     display: block;
     width: 100%;
@@ -182,7 +161,7 @@ body::before {
     transition: 0.3s ease;
 }
 
-/* BUTTON SHINE */
+/* SHINE EFFECT */
 .btn::before {
     content: "";
     position: absolute;
@@ -190,7 +169,7 @@ body::before {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.7), transparent);
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
     transition: 0.5s;
 }
 
@@ -225,6 +204,7 @@ body::before {
 <!-- iPhone -->
 <div class="card">
     <img src="iphone-auxilio.png">
+
     <div class="content">
         <div class="title">iPhone Auxilio</div>
 
@@ -249,6 +229,7 @@ body::before {
 <!-- Android -->
 <div class="card">
     <img src="android-auxilio.png">
+
     <div class="content">
         <div class="title">Android Auxilio</div>
 
